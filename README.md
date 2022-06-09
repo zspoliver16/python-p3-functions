@@ -242,41 +242,62 @@ Jean-Michel Basquiat! The `return` keyword will disrupt the execution of your
 function, and prevent Python from running any lines of code after the `return`
 keyword.
 
+## pass
+
+There will be times when you're writing out your code and know that you will
+need a function later, but you don't quite know what to put in there yet. A
+good practice in Python development is to make use of the `pass` keyword in
+empty functions until they are ready to be fleshed out.
+
+```py
+def my_future_function():
+    pass
+```
+
+Because Python uses indentation to determine when a code block starts and ends,
+it is necessary to put _something_ inside of an empty function- comments,
+sadly, do not count.
+
+Python developers typically opt for `pass` over `return None` because it is a
+statement rather than an expression. It does not terminate the function like
+a `return` statement would do. You can even put code after your `pass` and it
+will be executed! A `pass` statement reminds you that there is work to be done
+without interfering with your development.
+
 ## Instructions
 
 In the `js/index.js` file, there are four functions defined in JavaScript. Your
 job is to recreate the functionality of those functions by writing methods in
 Python that will accomplish the same thing.
 
-Write your code in `functions.py`. Run `pytest -x`, and use the tests along with
+Write your code in `lib/functions.py`. Run `pytest -x`, and use the tests along with
 the code in `js/index.js` to guide your work.
 
-1. Define a method `#greet_programmer` that takes no arguments. It should output
-   the string "Hello, programmer!" to the terminal with `#puts`.
+1. Define a method `greet_programmer()` that takes no arguments. It should output
+   the string "Hello, programmer!" to the terminal with `print()`.
 
-1. Define a method `#greet` that takes one argument, a name. It should output
+2. Define a method `greet()` that takes one argument, a name. It should output
    the string "Hello, name!" (with "name" being whatever value was passed as an
-   argument) to the terminal with `#puts`.
+   argument) to the terminal with `print()`.
 
-1. Define a method `#greet_with_default` that takes one argument, a name. It
+3. Define a method `greet_with_default()` that takes one argument, a name. It
    should output the string "Hello, name!" (with "name" being whatever value was
-   passed as an argument) to the terminal with `#puts`. If no arguments are
+   passed as an argument) to the terminal with `print()`. If no arguments are
    passed in, it should output the string "Hello, programmer!".
 
-1. Define a method `#add` that takes two numbers as arguments and **returns** the
+4. Define a method `add()` that takes two numbers as arguments and **returns** the
    sum of those two numbers.
 
-1. Define a method `#halve` that takes one number as an argument and **returns**
+5. Define a method `halve()` that takes one number as an argument and **returns**
    the that number's value, divided by two. If the argument is **not** an
    integer, it should return `None` and not throw an error.
 
 ## Conclusion
 
-Python's method syntax has a few things that make them distinct from JavaScript
-functions. In particular, make sure you pay attention to the **implicit return**
-value of Python methods, and always call methods with the right number of
-arguments to avoid errors. You should also keep in mind that **parentheses are
-optional when calling methods**.
+Python's function syntax has a few things that make them distinct from JavaScript
+functions. In particular, make sure you pay attention to the **indentation**
+**levels** of the code inside of Python functions, and always call functions with
+the right number of arguments to avoid errors.
 
 ## Resources
 
