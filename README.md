@@ -58,8 +58,8 @@ would look:
 
 ```py
 def my_function(param):
-  print("Running my_function")
-  return param + 1
+    print("Running my_function")
+    return param + 1
 
 # New code goes here!
 ```
@@ -90,7 +90,7 @@ my_function_return_value
 # 2
 ```
 
-When the `my_function` function is called, you'll see the output from the
+When the `my_function()` function is called, you'll see the output from the
 `print()` function in the terminal, followed by the return value. The return
 value, `2`, is then saved to the variable `my_function_return_value`.
 
@@ -101,7 +101,9 @@ value, `2`, is then saved to the variable `my_function_return_value`.
 > objects, if they've been **instantiated**) and often act upon those classes
 > or objects when called- remember `list.sort()` and `dict.get()`?
 
-## Method Arguments
+[pep-8 standards]: https://peps.python.org/pep-0008/
+
+## Arguments
 
 JavaScript allows you to define functions that expect a certain number of
 arguments, but will still run your code even if you don't pass in the expected
@@ -128,18 +130,20 @@ behavior.
 In Python, thankfully, when we run a method without passing in the required
 arguments it will give us an error message:
 
-```rb
-def say_hi(name)
-  puts "Hi there, #{name}!"
-end
+```py
+def say_hi(name):
+    print(f"Hi there, {name}!")
 
-say_hi
-# => ArgumentError (wrong number of arguments (given 0, expected 1))
+say_hi()
+# TypeError: say_hi() missing 1 required positional argument: 'name'
 ```
 
 Error messages like this are a **good thing** for us as developers, because it
 ensures that we are using methods as they are intending to be used, rather than
 trying to "fail gracefully" like JavaScript does.
+
+Note that this mistake resulted in a `TypeError`. What _type_ of input did we
+provide? What _type_ did `say_hi()` expect?
 
 ## Default Arguments
 
@@ -159,16 +163,15 @@ sayHi("Sunny");
 
 Python also lets us provide default arguments:
 
-```rb
-def say_hi(name = "Pythonist")
-  puts "Hi there, #{name}!"
-end
+```py
+def say_hi(name="Engineer"):
+    print(f"Hi there, {name}!")
 
-say_hi
-# => "Hi there, Pythonist!"
+say_hi()
+# "Hi there, Engineer!"
 
-say_hi "Sunny"
-# => "Hi there, Sunny!"
+say_hi("Sunny")
+# "Hi there, Sunny!"
 ```
 
 ## Return Values
@@ -181,7 +184,7 @@ both) of these things:
   change; or what they output to the terminal; or what they write to a file;
   etc)
 
-Writing output to the terminal using `console.log` or `#puts` is a _side effect_
+Writing output to the terminal using `console.log` or `print()` is a _side effect_
 of a function: it's distinct from the function's _return value_.
 
 Consider these two JavaScript functions:
@@ -212,11 +215,11 @@ machine you just put in two arguments, the number (C7) and your money. We
 already know how to use arguments, but then your vending machine might do two
 things. One, it will make a noise saying that everything worked, beep beep. Then
 it gives you the soda. The soda is the return type. But those beeps? Are you
-able to do anything with them? Nope! That's like `#puts`: it just tells you stuff
+able to do anything with them? Nope! That's like `print()`: it just tells you stuff
 and then goes into the ether! Gone forever.
 
-Every method in Python returns a value by default. This returned value will be the
-value of the last statement:
+Every function in Python returns a value by default. This returned value will be
+the value of the last statement:
 
 ```rb
 def add_and_log(num1, num2)
