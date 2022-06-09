@@ -79,116 +79,27 @@ but no semicolon is needed after the return value.
 - Rather than closing with a curly bracket, any new code can be written at the
 original indentation level
 
-Run the Python shell and copy/paste the method definition above into your
+Run the Python shell and copy/paste the function definition above into your
 session. Then, run the function:
 
-```rb
+```py
 my_function_return_value = my_function(1)
 # Running my_function
 # 2
-my_method_return_value
+my_function_return_value
 # 2
 ```
 
-When the `#my_method` method is called, you'll see the output from the `#puts`
-method in the terminal, followed by the return value. The return value, `2`,
-is then saved to the variable `my_method_return_value`.
+When the `my_function` function is called, you'll see the output from the
+`print()` function in the terminal, followed by the return value. The return
+value, `2`, is then saved to the variable `my_function_return_value`.
 
-> Why are they called methods in Python as opposed to functions? If you recall
-> from Object Oriented JavaScript, the difference between a method and a
-> function is that a **method** is a special sub-category of functions that must
-> be called on some object. In Python, every method we define — even when
-> it's not defined explicitly "on an object" or as part of a class definition
-> — is still actually defined on a built-in Python object: the global `main`
-> object, which you'll see referenced in error messages like "NameError
-> (undefined local variable or method 'my_var' for main:Object)". `main` is
-> roughly equivalent to the global object in JavaScript (the window in the
-> browser); you can see for yourself by entering IRB and typing `self`. Read
-> more about [Python's Main Object here][ruby main] if you're curious!
-
-[ruby main]: https://codequizzes.wordpress.com/2014/04/23/rubys-main-object-top-level-context/
-
-### Optional Parentheses
-
-Just like in JavaScript, you can invoke a method by placing parentheses at the
-end and passing in values as arguments, as in the example above. In Python though,
-parentheses are optional:
-
-```rb
-my_method 1
-# Running my_method
-# => 2
-```
-
-This syntax is a point of confusion for developers new to Python, since it can
-make it a bit less clear when using code whether you're invoking a **method** or
-using a **variable**. Consider the following method:
-
-```rb
-def say_hello()
-  "hello!"
-end
-```
-
-Parentheses are optional when defining the method, so we could also write this
-method like so:
-
-```rb
-def say_hello
-  "hello!"
-end
-```
-
-[The convention in Python][method parens] is to use parentheses as part of a
-method definition when it takes parameters, and to omit them when it has no
-parameters.
-
-[method parens]: https://rubystyle.guide/#method-parens
-
-You could **run** this method by placing parentheses at the end, like you would
-in JavaScript:
-
-```rb
-say_hello()
-# => "hello"
-```
-
-But you can also run this method without parentheses:
-
-```rb
-say_hello
-# => "hello"
-```
-
-In certain contexts, removing parentheses from the method calls can make your
-code more pleasant to look at. You might also see some Domain Specific Languages
-(DSLs) that prefer to omit parentheses. You've probably already seen a little
-bit of RSpec's DSL in the test files, for example:
-
-```rb
-describe "MyPythonThing" do
-  it "runs" do
-    # test here
-  end
-end
-```
-
-`#describe` and `#it` are just methods, so the above could have been written:
-
-```rb
-describe("MyPythonThing") do
-  it("runs") do
-    # test here
-  end
-end
-```
-
-But I think you'll agree that it looks nicer (and is easier to read) without the
-parentheses.
-
-As you're getting started, just keep the fact that **parentheses are optional**
-in the back of your mind, and remember to ask yourself the question when looking
-at code: "Is this a variable, or is this a method?"
+> If you recall from Object Oriented JavaScript, the difference between a method
+> and a function is that a **method** is a special sub-category of functions that
+> must be called on some object. We have methods in Python as well! These are
+> defined inside of classes and must be called through those classes (or
+> objects, if they've been **instantiated**) and often act upon those classes
+> or objects when called- remember `list.sort()` and `dict.get()`?
 
 ## Method Arguments
 
