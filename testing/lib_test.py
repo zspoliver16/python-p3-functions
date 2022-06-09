@@ -1,16 +1,24 @@
 #!/usr/bin/env python
 
-import runpy
+from lib.functions import greet_programmer, greet, greet_with_default, \
+                        add, halve
 
-class TestAssertionError:
+import io
+import sys
+
+
+class TestGreetProgrammer:
     '''
-    an_assertion_error.py
+    function greet_programmer()
     '''
 
-    def test_assertion_error(self):
+    def test_greet_programmer(self):
         '''
-        evaluates two equal values
+        prints "Hello, programmer!"
         '''
 
-        runpy.run_path('lib/an_assertion_error.py')
-
+        captured_out = io.StringIO()
+        sys.stdout = captured_out
+        greet_programmer()
+        sys.stdout = sys.__stdout__
+        assert(captured_out.getvalue() == "Hello, programmer!\n")
