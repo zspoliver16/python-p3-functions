@@ -218,114 +218,29 @@ it gives you the soda. The soda is the return type. But those beeps? Are you
 able to do anything with them? Nope! That's like `print()`: it just tells you stuff
 and then goes into the ether! Gone forever.
 
-Every function in Python returns a value by default. This returned value will be
-the value of the last statement:
-
-```rb
-def add_and_log(num1, num2)
-  puts num1 + num2
-end
-
-def add_and_return(num1, num2)
-  return num1 + num2
-end
-
-sum1 = add_and_log(2, 2)
-# => None
-sum2 = add_and_return(2, 2)
-# => 4
-```
-
-The return value of the `#add_and_log` method is `None`, because `#puts` returns
-`None`.
-
-Say you're the best painter in the world, Bob Ross. To make a method that just
-prints your name and returns `None`, you could write:
-
-```rb
-def print_name
-  puts "Bob Ross"
-end
-```
-
-To write a method that returns your name but doesn't print anything, you could
-write:
-
-```rb
-def return_name
-  "Bob Ross"
-end
-```
-
-To both print and return your name, you could write:
-
-```rb
-def print_and_return_name
-  puts "Bob Ross"
-  "Bob Ross"
-end
-```
-
-If you accidentally switched the order of the lines inside the method:
-
-```rb
-def broken_print_and_return_name
-  "Bob Ross"
-  puts "Bob Ross"
-end
-```
-
-The method would instead print "Bob Ross" and return `None`. This is because the
-last line that was evaluated was `puts ...` and the return value of a `#puts` is
-always `None`.
-
-### The Return Keyword
-
-There is one other way to return a value from a method, and that is to use the
-`return` keyword.
+Like in JavaScript, you must use the `return` keyword to retrieve an output
+value from a function in Python.
 
 Let's take a look:
 
-```rb
-def stylish_painter
-  best_hairstyle = "Bob Ross"
-  return "Jean-Michel Basquiat"
-  best_hairstyle
-end
+```py
+def stylish_painter():
+    best_hairstyle = "Bob Ross"
+    return "Jean-Michel Basquiat"
+    return best_hairstyle
+    print(best_hairstyle)
 
-stylish_painter
+stylish_painter()
 ```
 
-What do you expect the return value of the above method to be? Go into IRB, copy
-and paste the above method and call it.
+What do you expect the return value of the above method to be? Go into the
+Python shell, copy and paste the above method and call it.
 
 You may have expected the return value to be Bob Ross. His name is the last line
-of the method. _However_, the return value of the above method is actually
+of the function. _However_, the return value of the above method is actually
 Jean-Michel Basquiat! The `return` keyword will disrupt the execution of your
-method, and prevent Python from running any lines of code after the `return`
+function, and prevent Python from running any lines of code after the `return`
 keyword.
-
-The explicit use of the `return` keyword is generally avoided by many Pythonists,
-but there are instances where you might want to use `return` instead of relying
-on implicit returns; for example, if we wanted to use a [guard clause][] and exit
-a function early if a certain condition isn't met:
-
-```rb
-def reverse_name(name)
-  if name.class != String
-    return None
-  end
-
-  name.reverse
-end
-
-reverse_name("Bob Ross")
-# => "ssoR boB"
-reverse_name(123)
-# => None
-```
-
-[guard clause]: https://devblast.com/b/what-are-guard-clauses
 
 ## Instructions
 
@@ -333,7 +248,7 @@ In the `js/index.js` file, there are four functions defined in JavaScript. Your
 job is to recreate the functionality of those functions by writing methods in
 Python that will accomplish the same thing.
 
-Write your code in `methods.rb`. Run `learn test`, and use the tests along with
+Write your code in `functions.py`. Run `pytest -x`, and use the tests along with
 the code in `js/index.js` to guide your work.
 
 1. Define a method `#greet_programmer` that takes no arguments. It should output
@@ -365,4 +280,4 @@ optional when calling methods**.
 
 ## Resources
 
-- [Writing Python Methods](https://www.rubyguides.com/2019/06/ruby-method-definition/)
+- [Defining Your Own Python Function](https://realpython.com/defining-your-own-python-function/)
