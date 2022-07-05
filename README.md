@@ -2,16 +2,39 @@
 
 ## Learning Goals
 
-- Understand the similarities between functions in JavaScript and Python
-- Identify key differences between functions in JavaScript and Python
-- Define functions with parameters
-- Call functions and use their return value
+- Understand the similarities between functions in JavaScript and Python.
+- Identify key differences between functions in JavaScript and Python.
+- Define functions with parameters.
+- Call functions and use their return value.
+
+***
+
+## Key Vocab
+
+- **Interpreter**: a program that executes other programs. Python programs
+require the Python interpreter to be installed on your computer so that they
+can be run.
+- **Python Shell**: an interactive interpreter that can be accessed from the
+command line.
+- **Data Type**: a specific kind of data. The Python interpreter uses these
+types to determine which actions can be performed on different data items.
+- **Exception**: a type of error that can be predicted and handled without
+causing a program to crash.
+- **Code Block**: a collection of code that is interpreted together. Python
+groups code blocks by indentation level.
+- **Function**: a named code block that performs a sequence of actions when it
+is called.
+- **Scope**: the area in your program where a specific variable can be called.
+
+***
 
 ## Introduction
 
 One of the first things you likely learned in JavaScript was how to write
 functions. In this lesson, you'll get practice writing functions in Python to see
 the difference between Python functions and JavaScript functions.
+
+***
 
 ## Python Function Syntax
 
@@ -103,6 +126,8 @@ value, `2`, is then saved to the variable `my_function_return_value`.
 
 [pep-8 standards]: https://peps.python.org/pep-0008/
 
+***
+
 ## Arguments
 
 JavaScript allows you to define functions that expect a certain number of
@@ -145,6 +170,8 @@ trying to "fail gracefully" like JavaScript does.
 Note that this mistake resulted in a `TypeError`. What _type_ of input did we
 provide? What _type_ did `say_hi()` expect?
 
+***
+
 ## Default Arguments
 
 We can fix the behavior of our JavaScript function above by providing a default
@@ -173,6 +200,8 @@ say_hi()
 say_hi("Sunny")
 # "Hi there, Sunny!"
 ```
+
+***
 
 ## Return Values
 
@@ -242,7 +271,9 @@ Jean-Michel Basquiat! The `return` keyword will disrupt the execution of your
 function, and prevent Python from running any lines of code after the `return`
 keyword.
 
-## pass
+***
+
+## `pass`
 
 There will be times when you're writing out your code and know that you will
 need a function later, but you don't quite know what to put in there yet. A
@@ -263,6 +294,8 @@ statement rather than an expression. It does not terminate the function like
 a `return` statement would do. You can even put code after your `pass` and it
 will be executed! A `pass` statement reminds you that there is work to be done
 without interfering with your development.
+
+***
 
 ## Instructions
 
@@ -292,12 +325,16 @@ the code in `js/index.js` to guide your work.
    the that number's value, divided by two. If the argument is **not** an
    integer, it should return `None` and not throw an error.
 
+   ***
+
 ## Conclusion
 
 Python's function syntax has a few things that make them distinct from JavaScript
 functions. In particular, make sure you pay attention to the **indentation**
 **levels** of the code inside of Python functions, and always call functions with
 the right number of arguments to avoid errors.
+
+***
 
 ## Resources
 
