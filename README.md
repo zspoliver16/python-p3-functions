@@ -117,12 +117,9 @@ When the `my_function()` function is called, you'll see the output from the
 `print()` function in the terminal, followed by the return value. The return
 value, `2`, is then saved to the variable `my_function_return_value`.
 
-> If you recall from Object Oriented JavaScript, the difference between a method
-> and a function is that a **method** is a special sub-category of functions that
-> must be called on some object. We have methods in Python as well! These are
-> defined inside of classes and must be called through those classes (or
-> objects, if they've been **instantiated**) and often act upon those classes
-> or objects when called- remember `list.sort()` and `dict.get()`?
+> You might see some functions referred to as **methods**. Methods are a
+> special type of function that belong to **objects**. They often act upon
+> those objects when called- remember `list.sort()` and `dict.get()`?
 
 [pep-8 standards]: https://peps.python.org/pep-0008/
 
@@ -322,10 +319,9 @@ the code in `js/index.js` to guide your work.
    sum of those two numbers.
 
 5. Define a method `halve()` that takes one number as an argument and **returns**
-   the that number's value, divided by two. If the argument is **not** an
-   integer, it should return `None` and not throw an error.
+   the that number's value, divided by two.
 
-   ***
+***
 
 ## Conclusion
 

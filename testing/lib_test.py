@@ -58,10 +58,6 @@ class TestAdd:
 class TestHalve:
     '''function halve()'''
 
-    def test_halve_string(self):
-        '''ignores non-numerical input'''
-        assert(not halve("Guido"))
-
     def test_halve_int(self):
         '''halves integer input'''
         assert(halve(100) == 50)
