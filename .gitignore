@@ -17,5 +17,5 @@
 # Canvas-specific .results.json
 .results.json
 
-.venv/*
-.pytest_cache/*
+.venv
+.pytest_cache
