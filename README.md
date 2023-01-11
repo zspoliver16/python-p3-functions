@@ -92,15 +92,15 @@ There are a few key differences in the syntax here:
 - Use the `def` keyword to identify this code as a function.
 - Write the name of the method in snake case (by convention).
 - Parameters are still defined in parentheses, after the method name.
-- Instead of curly brackets, begin with a colon after the parentheses
+- Instead of curly brackets, begin with a colon after the parentheses.
 - In Python, we must indent all code that is meant to be executed in
 my_function. The [`PEP-8` standards][pep-8 standards] for writing Python code
 state that each indentation should be composed of four spaces (though the
-interpreter is less picky)
+interpreter is less picky).
 - `return` statements in Python work very similarly to those in JavaScript,
 but no semicolon is needed after the return value.
 - Rather than closing with a curly bracket, any new code can be written at the
-original indentation level
+original indentation level.
 
 Run the Python shell and copy/paste the function definition above into your
 session. Then, run the function:
