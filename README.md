@@ -107,10 +107,10 @@ session. Then, run the function:
 
 ```py
 my_function_return_value = my_function(1)
-# Running my_function
-# 2
+# => Running my_function
+# => 2
 my_function_return_value
-# 2
+# => 2
 ```
 
 When the `my_function()` function is called, you'll see the output from the
@@ -157,7 +157,7 @@ def say_hi(name):
     print(f"Hi there, {name}!")
 
 say_hi()
-# TypeError: say_hi() missing 1 required positional argument: 'name'
+# => TypeError: say_hi() missing 1 required positional argument: 'name'
 ```
 
 Error messages like this are a **good thing** for us as developers, because it
@@ -192,10 +192,10 @@ def say_hi(name="Engineer"):
     print(f"Hi there, {name}!")
 
 say_hi()
-# "Hi there, Engineer!"
+# => "Hi there, Engineer!"
 
 say_hi("Sunny")
-# "Hi there, Sunny!"
+# => "Hi there, Sunny!"
 ```
 
 ***
@@ -205,10 +205,10 @@ say_hi("Sunny")
 You can categorize all functions that you write as generally useful for one (or
 both) of these things:
 
-- What _return value_ they have
+- What _return value_ they have.
 - What _side effects_ they have (what other parts of the application they
   change; or what they output to the terminal; or what they write to a file;
-  etc)
+  etc).
 
 Writing output to the terminal using `console.log` or `print()` is a _side effect_
 of a function: it's distinct from the function's _return value_.
